@@ -70,3 +70,44 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     }
   );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Get all the section elements by their IDs
+const sections = document.querySelectorAll('section');
+
+// Loop through each section and add the "block" class
+sections.forEach(section => {
+    section.classList.add('block', 'section');
+});
+
+const paragraphs = document.querySelectorAll('p');
+
+// Loop through each section and add the "block" class
+paragraphs.forEach(paragraph => {
+    paragraph.classList.add('card-content');
+});
