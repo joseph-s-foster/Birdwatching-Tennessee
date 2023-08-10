@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  // API key here
   const apikey = "7761e5644bf2af39970d6760ed459312";
 
-  // Function to fetch weather data
   const fetchWeatherData = async (url) => {
     try {
       const response = await fetch(url);
@@ -14,7 +12,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   };
 
-  // Display modal on page load
   const isGreatWeatherForBirdwatching = (currentWeatherData) => {
     const { weather, main } = currentWeatherData;
     const isRaining = weather.some((item) => item.main === "Rain");
@@ -26,7 +23,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (temperature <= 32) {
       message = "Brrr... what are you expecting to find out there, penguins?";
     } else if (temperature >= 85) {
-      message = "Beat the heat! Bring a water source";
+      message = "Beat the heat! Bring a water source.";
+    } else if (isRaining) {
+      message = "Bring an umbrella, maybe one for the birds too.";
     } else if (currentHour >= 21 || currentHour < 6) {
       message = "The birds are sleeping. You should be too!";
     } else {
@@ -36,7 +35,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     createModal(message);
   };
 
-  // Display modal on page load
   const createModal = (message) => {
     const modalContainer = document.createElement("div");
     modalContainer.classList.add("modal", "is-active");
@@ -56,7 +54,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     modalCloseButton.setAttribute("aria-label", "close");
     modalContent.appendChild(modalCloseButton);
 
-    // Close modal when close button is clicked
     const closeModal = () => {
       modalContainer.classList.remove("is-active");
     };
@@ -69,25 +66,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.body.appendChild(modalContainer);
   };
 
-  // Get user's location and fetch weather data
   const getLocationAndFetchWeather = async () => {
     try {
-      // Get user's location
       const success = (position) => {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
+        const { latitude, longitude } = position.coords;
+        const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?appid=${apikey}&lat=${latitude}&lon=${longitude}&units=imperial`;
 
-        // Fetch weather data for the user's location
-        fetchWeatherData(
-          `https://api.openweathermap.org/data/2.5/weather?appid=${apikey}&lat=${latitude}&lon=${longitude}&units=imperial`
-        ).then((currentWeatherData) => {
-          if (currentWeatherData) {
-            if (isGreatWeatherForBirdwatching(currentWeatherData)) {
-              createModal();
-            }
-            // You can do any processing with the fetched data here if needed
-            console.log("Current Weather Data:", currentWeatherData);
+        fetchWeatherData(weatherUrl).then((currentWeatherData) => {
+          if (currentWeatherData && isGreatWeatherForBirdwatching(currentWeatherData)) {
+            createModal();
           }
+          console.log("Current Weather Data:", currentWeatherData);
         });
       };
 
@@ -101,20 +90,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   };
 
-  // Call the getLocationAndFetchWeather function when the page loads
   getLocationAndFetchWeather();
-});
-// Get all the section elements by their IDs
-const sections = document.querySelectorAll('section');
 
-// Loop through each section and add the "block" class
-sections.forEach(section => {
-  section.classList.add('block', 'section');
-});
+  const elementsWithClass = (selector, classNames) => {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach((element) => {
+      element.classList.add(...classNames);
+    });
+  };
 
-const paragraphs = document.querySelectorAll('p');
-
-// Loop through each section and add the "card-content" class
-paragraphs.forEach(paragraph => {
-  paragraph.classList.add('card-content');
+  elementsWithClass('section', ['block', 'section']);
+  elementsWithClass('p', ['card-content']);
 });
