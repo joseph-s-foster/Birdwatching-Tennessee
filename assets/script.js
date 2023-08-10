@@ -23,9 +23,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     let message;
 
-    if (temperature < 32) {
+    if (temperature <= 32) {
       message = "Brrr... what are you expecting to find out there, penguins?";
-    } else if (currentHour >= 20 || currentHour < 6) {
+    } else if (temperature >= 85) {
+      message = "Beat the heat! Bring a water source";
+    } else if (currentHour >= 21 || currentHour < 6) {
       message = "The birds are sleeping. You should be too!";
     } else {
       message = "Great weather for birdwatching today!";
@@ -102,17 +104,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Call the getLocationAndFetchWeather function when the page loads
   getLocationAndFetchWeather();
 });
-  // Get all the section elements by their IDs
-  const sections = document.querySelectorAll('section');
+// Get all the section elements by their IDs
+const sections = document.querySelectorAll('section');
 
-  // Loop through each section and add the "block" class
-  sections.forEach(section => {
-    section.classList.add('block', 'section');
-  });
+// Loop through each section and add the "block" class
+sections.forEach(section => {
+  section.classList.add('block', 'section');
+});
 
-  const paragraphs = document.querySelectorAll('p');
+const paragraphs = document.querySelectorAll('p');
 
-  // Loop through each section and add the "card-content" class
-  paragraphs.forEach(paragraph => {
-    paragraph.classList.add('card-content');
-  });
+// Loop through each section and add the "card-content" class
+paragraphs.forEach(paragraph => {
+  paragraph.classList.add('card-content');
+});
