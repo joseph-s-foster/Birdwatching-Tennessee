@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       message = "Beat the heat! Bring a water source.";
     } else if (isRaining) {
       message = "Bring an umbrella, maybe one for the birds too.";
-    } else if (currentHour >= 21 || currentHour < 6) {
-      message = "The birds are sleeping. You should be too!";
+    } else if (currentHour >= 19 || currentHour < 6) {
+      message = "Shhh... The birds are sleeping.";
     } else {
       message = "Great weather for birdwatching today!";
     }
