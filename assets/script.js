@@ -80,3 +80,60 @@ document.addEventListener("DOMContentLoaded", async () => {
   elementsWithClass('section', ['block', 'section']);
   elementsWithClass('p', ['card-content']);
 });
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const apiKey = 'q9iu7en5gq8d'; 
+  const apiUrl = 'https://api.ebird.org/v2/ref/hotspot/TN';
+  const cardContainer = document.getElementById('card-container'); 
+
+  console.log("Page loaded");
+
+  // Function to fetch recent birdwatching hotspot data from eBird API
+  const fetchBirdHotspotData = async () => {
+    try {
+      console.log("Fetching bird hotspot data...");
+      const response = await fetch(apiUrl, {
+        headers: {
+          'X-eBirdApiToken': apiKey
+        }
+      });
+
+      if (response.ok) {
+        const csvData = await response.text(); // Get the response body as text
+        console.log("Bird hotspot data fetched successfully:", csvData);
+        return csvData;
+      }
+
+      throw new Error("Network response was not ok.");
+    } catch (error) {
+      console.error("Error fetching bird hotspot data:", error);
+      return null;
+    }
+  };
+
+  // Function to create and append observation cards
+  const createObservationCard = (data) => {
+    const card = document.createElement('div');
+    card.className = 'observation-card';
+    card.innerText = data; // You can customize this to format the data nicely
+
+    cardContainer.appendChild(card);
+  };
+
+  // Fetch bird hotspot data and create observation cards
+  const loadBirdHotspotData = async () => {
+    console.log("Loading bird hotspot data...");
+    const birdHotspotData = await fetchBirdHotspotData();
+    if (birdHotspotData) {
+      console.log("Bird hotspot data loaded:", birdHotspotData);
+      const lines = birdHotspotData.split('\n');
+      lines.forEach(line => {
+        // Create and append an observation card for each line of CSV data
+        createObservationCard(line);
+      });
+    }
+  };
+
+  // Call the loadBirdHotspotData function when the page loads
+  loadBirdHotspotData();
+});
