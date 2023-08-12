@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (temperature <= 32) {
       message = "Brrr... what are you expecting to find out there, penguins?";
-    } else if (temperature >= 85) {
+    } else if (temperature >= 80) {
       message = "Beat the heat! Bring a water source.";
     } else if (isRaining) {
       message = "Bring an umbrella, maybe one for the birds too.";
@@ -32,38 +32,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       message = "Great weather for birdwatching today!";
     }
 
-    createModal(message);
+    displayMessage(message);
   };
 
-  const createModal = (message) => {
-    const modalContainer = document.createElement("div");
-    modalContainer.classList.add("modal", "is-active");
+  const displayMessage = (message) => {
+    const messageElement = document.createElement("p");
+    messageElement.textContent = message;
+    messageElement.classList.add("message", "is-info");
 
-    const modalBackground = document.createElement("div");
-    modalBackground.classList.add("modal-background");
-
-    const modalContent = document.createElement("div");
-    modalContent.classList.add("modal-content", "has-text-centered");
-
-    const modalMessage = document.createElement("p");
-    modalMessage.textContent = message;
-    modalContent.appendChild(modalMessage);
-
-    const modalCloseButton = document.createElement("button");
-    modalCloseButton.classList.add("modal-close", "is-large");
-    modalCloseButton.setAttribute("aria-label", "close");
-    modalContent.appendChild(modalCloseButton);
-
-    const closeModal = () => {
-      modalContainer.classList.remove("is-active");
-    };
-
-    modalCloseButton.addEventListener("click", closeModal);
-
-    modalContainer.appendChild(modalBackground);
-    modalContainer.appendChild(modalContent);
-
-    document.body.appendChild(modalContainer);
+    const headerElement = document.querySelector("header");
+    headerElement.appendChild(messageElement);
   };
 
   const getLocationAndFetchWeather = async () => {

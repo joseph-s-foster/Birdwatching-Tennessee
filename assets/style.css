@@ -1,4 +1,52 @@
-.modal {
-    color: white;
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 3rem;
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+section {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img:hover {
+    scale: 101%;
+}
+
+.centered-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.centered-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.centered-list li {
+    margin: 0 10px;
+}
+
+
+.top {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
 }
