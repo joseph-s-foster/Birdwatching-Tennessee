@@ -1,15 +1,73 @@
-.header {
+body,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.page {
+    padding-bottom: 8px;
+}
+
+.main-menu {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    font-size: 3rem;
+}
+
+.main-menu li {
+    position: relative;
+}
+
+.main-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    width: 150px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    font-size: 1rem;
+    padding: 1px;
+}
+
+.dropdown-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .main-menu {
+        flex-direction: column;
+    }
 }
 
 .message {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 section {
