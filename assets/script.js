@@ -1,90 +1,86 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  const apikey = "7761e5644bf2af39970d6760ed459312";
+const apikey = "7761e5644bf2af39970d6760ed459312";
 
-  const fetchWeatherData = async (url) => {
-    try {
-      const response = await fetch(url);
-      if (response.ok) return await response.json();
-      throw new Error("Network response was not ok.");
-    } catch (error) {
-      console.error("Error fetching weather data:", error);
-      return null;
-    }
-  };
+const fetchWeatherData = async (url) => {
+  try {
+    const response = await fetch(url);
+    if (response.ok) return await response.json();
+    throw new Error("Network response was not ok.");
+  } catch (error) {
+    console.error("Error fetching weather data:", error);
+    return null;
+  }
+};
 
-  const isGreatWeatherForBirdwatching = (currentWeatherData) => {
-    const { weather, main } = currentWeatherData;
-    const isRaining = weather.some((item) => item.main === "Rain");
-    const temperature = main.temp;
-    const currentHour = new Date().getHours();
+const weatherForBirdwatching = (currentWeatherData) => {
+  const { weather, main } = currentWeatherData;
+  const temp = main.temp;
+  const desc = weather[0].description
+  const wholeTemp = temp.toFixed(0);
+  const capitalizeFirstLetter = str => str.replace(/\b\w/g, match => match.toUpperCase());
+  const originalString = (desc);
+  const capitalizedString = capitalizeFirstLetter(originalString);
+  return wholeTemp + "°F " + capitalizedString;
+};
 
-    let message;
+const displayMessage = (message) => {
+  const messageElement = document.createElement("p");
+  messageElement.textContent = message;
+  messageElement.classList.add("message", "is-info");
+  messageElement.style.backgroundColor = "#333";
+  messageElement.style.color = "white";
 
-    if (temperature <= 32) {
-      message = "Brrr... what are you expecting to find out there, penguins?";
-    } else if (temperature >= 80) {
-      message = "Beat the heat! Bring a water source.";
-    } else if (isRaining) {
-      message = "Bring an umbrella, maybe one for the birds too.";
-    } else if (currentHour >= 19 || currentHour < 6) {
-      message = "Shhh... The birds are sleeping.";
-    } else {
-      message = "Great weather for birdwatching today!";
-    }
+  const headerElement = document.querySelector(".weather");
+  headerElement.appendChild(messageElement);
+};
 
-    displayMessage(message);
-  };
+const getLocationAndFetchWeather = async () => {
+  try {
+    const success = (position) => {
+      const { latitude, longitude } = position.coords;
+      const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?appid=${apikey}&lat=${latitude}&lon=${longitude}&units=imperial`;
 
-  const displayMessage = (message) => {
-    const messageElement = document.createElement("p");
-    messageElement.textContent = message;
-    messageElement.classList.add("message", "is-info");
-
-    const headerElement = document.querySelector("header");
-    headerElement.appendChild(messageElement);
-  };
-
-  const getLocationAndFetchWeather = async () => {
-    try {
-      const success = (position) => {
-        const { latitude, longitude } = position.coords;
-        const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?appid=${apikey}&lat=${latitude}&lon=${longitude}&units=imperial`;
-
-        fetchWeatherData(weatherUrl).then((currentWeatherData) => {
-          if (currentWeatherData && isGreatWeatherForBirdwatching(currentWeatherData)) {
-            createModal();
+      fetchWeatherData(weatherUrl)
+        .then((currentWeatherData) => {
+          if (currentWeatherData && weatherForBirdwatching(currentWeatherData)) {
+            displayMessage(weatherForBirdwatching(currentWeatherData));
           }
           console.log("Current Weather Data:", currentWeatherData);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
         });
-      };
+    };
 
-      const error = () => {
-        console.error("Unable to retrieve location.");
-      };
+    const error = () => {
+      console.error("Unable to retrieve location.");
+    };
 
-      navigator.geolocation.getCurrentPosition(success, error);
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
+    navigator.geolocation.getCurrentPosition(success, error);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+};
 
-  getLocationAndFetchWeather();
+document.addEventListener("DOMContentLoaded", getLocationAndFetchWeather);
 
-  const elementsWithClass = (selector, classNames) => {
-    const elements = document.querySelectorAll(selector);
-    elements.forEach((element) => {
-      element.classList.add(...classNames);
-    });
-  };
+const dropdowns = document.querySelectorAll('.dropdown');
 
-  elementsWithClass('section', ['block', 'section']);
-  elementsWithClass('p', ['card-content']);
+dropdowns.forEach(dropdown => {
+  dropdown.addEventListener('mouseenter', () => {
+    dropdown.querySelector('.dropdown-menu').style.display = 'block';
+  });
+
+  dropdown.addEventListener('mouseleave', () => {
+    dropdown.querySelector('.dropdown-menu').style.display = 'none';
+  });
 });
 
+// Joe < 78 < Shaun
+
 document.addEventListener("DOMContentLoaded", async () => {
-  const apiKey = 'q9iu7en5gq8d'; 
+  const apiKey = 'q9iu7en5gq8d';
   const apiUrl = 'https://api.ebird.org/v2/ref/hotspot/TN';
-  const cardContainer = document.getElementById('card-container'); 
+  const cardContainer = document.getElementById('card-container');
 
   console.log("Page loaded");
 
