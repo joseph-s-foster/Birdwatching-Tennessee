@@ -150,3 +150,65 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Call the loadBirdHotspotData function when the page loads
   loadBirdHotspotData();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const saveButtons = document.querySelectorAll('.saveBtn');
+  const birdSighting = document.querySelector('#bird-sighting');
+  const inputField = document.querySelector('input[type="text"]');
+  
+  const savedInput = localStorage.getItem('userInput');
+  savedInput && (inputField.value = savedInput);
+  
+  saveButtons.forEach(saveButton => {
+    saveButton.addEventListener('click', () => {
+      const userInput = inputField.value;
+      if (userInput) {
+        localStorage.setItem('userInput', userInput);
+        birdSighting.innerHTML = "Sighting Saved";
+        setTimeout(() => birdSighting.innerHTML = "", 2000);
+      }
+    });
+  });
+});
+
+
+
+
