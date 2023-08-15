@@ -79,25 +79,28 @@ dropdowns.forEach(dropdown => {
 
 document.addEventListener("DOMContentLoaded", async () => {
   const apiKey = 'q9iu7en5gq8d';
-  const apiUrl = 'https://api.ebird.org/v2/ref/hotspot/TN';
+  const apiUrl = 'https://api.ebird.org/v2/data/obs/US-TN/recent';
   const cardContainer = document.getElementById('card-container');
 
   console.log("Page loaded");
 
-  // Function to fetch recent birdwatching hotspot data from eBird API
   const fetchBirdHotspotData = async () => {
     try {
+      const oneWeekAgo = new Date();
+      oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+      const formattedDate = oneWeekAgo.toISOString().split('T')[0];
+
       console.log("Fetching bird hotspot data...");
-      const response = await fetch(apiUrl, {
+      const response = await fetch(`${apiUrl}?maxDate=${formattedDate}`, {
         headers: {
           'X-eBirdApiToken': apiKey
         }
       });
 
       if (response.ok) {
-        const csvData = await response.text(); // Get the response body as text
-        console.log("Bird hotspot data fetched successfully:", csvData);
-        return csvData;
+        const jsonData = await response.json();
+        console.log("Bird hotspot data fetched successfully:", jsonData);
+        return jsonData;
       }
 
       throw new Error("Network response was not ok.");
@@ -106,30 +109,41 @@ document.addEventListener("DOMContentLoaded", async () => {
       return null;
     }
   };
-
-  // Function to create and append observation cards
   const createObservationCard = (data) => {
     const card = document.createElement('div');
     card.className = 'observation-card';
-    card.innerText = data; // You can customize this to format the data nicely
-
+  
+    // Extract the required information from the data
+    const { comName, sciName, locName, obsDt } = data;
+  
+    // Create a formatted card content
+    const cardContent = `
+      <p><strong>Common Name:</strong> ${comName}</p>
+      <p><strong>Scientific Name:</strong> ${sciName}</p>
+      <p><strong>Location:</strong> ${locName}</p>
+      <p><strong>Observation Date:</strong> ${obsDt}</p>
+    `;
+  
+    card.innerHTML = cardContent;
+  
     cardContainer.appendChild(card);
   };
-
-  // Fetch bird hotspot data and create observation cards
+  
   const loadBirdHotspotData = async () => {
     console.log("Loading bird hotspot data...");
     const birdHotspotData = await fetchBirdHotspotData();
     if (birdHotspotData) {
       console.log("Bird hotspot data loaded:", birdHotspotData);
-      const lines = birdHotspotData.split('\n');
-      lines.forEach(line => {
-        // Create and append an observation card for each line of CSV data
-        createObservationCard(line);
+  
+      // Loop through the last 5 observations
+      const last10Observations = birdHotspotData.slice(-5);
+  
+      last10Observations.forEach(observation => {
+        createObservationCard(observation);
       });
     }
   };
+  
 
-  // Call the loadBirdHotspotData function when the page loads
   loadBirdHotspotData();
 });
