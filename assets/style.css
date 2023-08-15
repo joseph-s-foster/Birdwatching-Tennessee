@@ -14,10 +14,6 @@ header {
     font-size: 2rem;
 }
 
-.page {
-    padding-bottom: 8px;
-}
-
 .main-menu {
     display: flex;
     justify-content: space-around;
