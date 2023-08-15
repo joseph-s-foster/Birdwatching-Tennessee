@@ -172,7 +172,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const saveButtons = document.querySelectorAll('.saveBtn');
   const birdSighting = document.querySelector('#bird-sighting');
@@ -192,3 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+
+
