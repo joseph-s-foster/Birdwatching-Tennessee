@@ -14,10 +14,6 @@ header {
     font-size: 2rem;
 }
 
-.page {
-    padding-bottom: 8px;
-}
-
 .main-menu {
     display: flex;
     justify-content: space-around;
@@ -107,6 +103,21 @@ img:hover {
     justify-content: center;
     text-align: center;
     margin-bottom: 20px;
+}
+
+.style-Button {
+    position:absolute;
+    top: 70%; 
+    right: 55%; 
+    transform: translate(0, -50%); 
+    border-left: 1px solid rgb(11, 8, 8);
+    border-top-right-radius: 25px;
+    color: white;
+}
+
+.bird-sighting {
+    display: flex;
+    align-items: center;
 }
 
 .hotspot {

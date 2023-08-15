@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Birdwatching Tennessee</title>
+    <p id="bird-sighting"></p>
 </head>
 
 <body id="top">
@@ -15,15 +16,17 @@
     <header>
         <nav>
             <ul class="main-menu">
-                <h1 class="page">Birdwatching Tennessee</h1>
-                <li id="weather" class="weather">
+                <li>
+                    <h1>&#129718; Birdwatching Tennessee</h1>
+                </li>
+                <li class="weather">
                     <!-- weather data goes here -->
                 </li>
                 <li>
                     <a href="#birding-hotspots">Birding Hotspots &#129517; </a>
                 </li>
                 <li class="dropdown">
-                    <a>Birds &#9660;</a>
+                    <a>&#129417; Birds</a>
                     <ul class="dropdown-menu">
                         <li><a class="navbar-item" href="#bluebird">
                                 Eastern Bluebird
@@ -76,19 +79,25 @@
         </nav>
     </header>
 
-    <main class="container-fluid">
-
-        <section id="bluebird">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-one-third">
-                        <a href="https://www.allaboutbirds.org/guide/Eastern_Bluebird">
-                            <img src="./assets/Eastern Bluebird.png" alt="a picture of a bluebird"
-                                title="Eastern Bluebird">
-                        </a>
-                        <h4>Eastern Bluebird</h4>
-                    </div>
-        </section>
+    <section id="bluebird">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-one-third">
+              <a href="https://www.allaboutbirds.org/guide/Eastern_Bluebird">
+                <div class="container">
+                  <img src="./assets/Eastern Bluebird.png" alt="a picture of a bluebird"
+                    title="Eastern Bluebird">
+                </div>
+              </a>
+              <h4>Eastern Bluebird</h4>
+              <input type="text" name="textbox" id="textbox">
+              <div class="styleButton">
+                <button class="saveBtn">Save Input</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
         <section id="nwarbler">
             <div class="container">
@@ -99,7 +108,14 @@
                                 title="Nashville Warbler">
                         </a>
                         <h4>Nashville Warbler</h4>
-                    </div>
+                      <input type="text" name="textbox" id="textbox">
+              <div class="styleButton">
+                <button class="saveBtn">Save Input</button>
+                <div id="bird-sighting"></div>
+              </div>
+            </div>
+          </div>
+        </div>
         </section>
 
         <section id="dejunco">
@@ -110,7 +126,14 @@
                             <img src="./assets/Dark-eyed junco.png" alt="a picture of a junco" title="Dark Eyed Junco">                       
                         </a> 
                          <h4>Dark Eyed Junco</h4>
-                    </div>
+                         <input type="text" name="textbox" id="textbox">
+                         <div class="styleButton">
+                           <button class="saveBtn">Save Input</button>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+
         </section>
 
         <section id="rthawk">
@@ -120,8 +143,13 @@
                         <a href="https://www.allaboutbirds.org/guide/Red-tailed_Hawk">
                             <img src="./assets/Red tail hawk.png" alt="a picture of a hawk" title="Red Tailed Hawk">
                         </a>
-                        <h4>Red Tailed Hawk</h4>
+                        <input type="text" name="textbox" id="textbox">
+                        <div class="styleButton">
+                          <button class="saveBtn">Save Input</button>
+                        </div>
+                      </div>
                     </div>
+                  </div>
         </section>
 
         <section id="dwoodpecker">
@@ -133,7 +161,13 @@
                                 title="Downy Woodpecker">
                         </a>
                         <h4>Downy Woodpecker</h4>
+                        <input type="text" name="textbox" id="textbox">
+                        <div class="styleButton">
+                          <button class="saveBtn">Save Input</button>
+                        </div>
+                      </div>
                     </div>
+                  </div>
         </section>
 
         <section id="esowl">
@@ -145,7 +179,13 @@
                                 title="Eastern Screech Owl">
                         </a>
                         <h4>Eastern Screech Owl</h4>
+                        <input type="text" name="textbox" id="textbox">
+                        <div class="styleButton">
+                          <button class="saveBtn">Save Input</button>
+                        </div>
+                      </div>
                     </div>
+                  </div>
         </section>
 
         <section id="ncardinal">
@@ -157,7 +197,13 @@
                                 title="Northern Cardinal">
                         </a>
                         <h4>Northern Cardinal</h4>
+                        <input type="text" name="textbox" id="textbox">
+                        <div class="styleButton">
+                          <button class="saveBtn">Save Input</button>
+                        </div>
+                      </div>
                     </div>
+                  </div>
         </section>
 
         <section id="hfinch">
@@ -168,7 +214,13 @@
                             <img src="./assets/House Finch.png" alt="a picture of a Finch" title="House Finch">
                         </a>
                         <h4>House Finch</h4>
+                        <input type="text" name="textbox" id="textbox">
+                        <div class="styleButton">
+                          <button class="saveBtn">Save Input</button>
+                        </div>
+                      </div>
                     </div>
+                  </div>
         </section>
 
         <section id="rbwoodpecker">
@@ -180,7 +232,13 @@
                                 title="Red Bellied Woodpecker">
                         </a>
                         <h4>Red Bellied Woodpecker</h4>
+                        <input type="text" name="textbox" id="textbox">
+                        <div class="styleButton">
+                          <button class="saveBtn">Save Input</button>
+                        </div>
+                      </div>
                     </div>
+                  </div>
         </section>
 
         <section id="bjay">
@@ -191,7 +249,13 @@
                             <img src="./assets/Blue Jay.png" alt="a picture of a blue jay" title="Blue Jay">
                         </a>
                         <h4>Blue Jay</h4>
+                        <input type="text" name="textbox" id="textbox">
+                        <div class="styleButton">
+                          <button class="saveBtn">Save Input</button>
+                        </div>
+                      </div>
                     </div>
+                  </div>
         </section>
 
         <section id="ecdove">
@@ -203,7 +267,13 @@
                                 title="Eurasian Collared Dove">
                         </a>
                         <h4>Eurasian Collared Dove</h4>
+                        <input type="text" name="textbox" id="textbox">
+                        <div class="styleButton">
+                          <button class="saveBtn">Save Input</button>
+                        </div>
+                      </div>
                     </div>
+                  </div>
         </section>
 
         <section id="arobin">
@@ -214,7 +284,13 @@
                             <img src="./assets/American Robin.png" alt="a picture of a robin" title="American Robin">
                         </a>
                         <h4>American Robin</h4>
+                        <input type="text" name="textbox" id="textbox">
+                        <div class="styleButton">
+                          <button class="saveBtn">Save Input</button>
+                        </div>
+                      </div>
                     </div>
+                  </div>
         </section>
 
         <section id="etowhee">
@@ -225,7 +301,13 @@
                             <img src="./assets/Eastern Towhee.png" alt="a picture of a towhee" title="Eastern Towhee">
                         </a>
                         <h4>Eastern Towhee</h4>
+                        <input type="text" name="textbox" id="textbox">
+                        <div class="styleButton">
+                          <button class="saveBtn">Save Input</button>
+                        </div>
+                      </div>
                     </div>
+                  </div>
         </section>
 
         <section id="mdove">
@@ -236,7 +318,13 @@
                             <img src="./assets/Mourning Dove.png" alt="a picture of a dove" title="Mourning Dove">
                         </a>
                         <h4>Mourning Dove</h4>
+                        <input type="text" name="textbox" id="textbox">
+                        <div class="styleButton">
+                          <button class="saveBtn">Save Input</button>
+                        </div>
+                      </div>
                     </div>
+                  </div>
         </section>
 
         <section id="cwren">
@@ -247,7 +335,13 @@
                             <img src="./assets/Carolina Wren.png" alt="a picture of a wren" title="Carolina Wren">
                         </a>
                         <h4>Carolina Wren</h4>
+                        <input type="text" name="textbox" id="textbox">
+                        <div class="styleButton">
+                          <button class="saveBtn">Save Input</button>
+                        </div>
+                      </div>
                     </div>
+                  </div>
         </section>
         <div id="birding-hotspots">
             <p class="hotspot content-is-large"><strong>Birding Hotspots in Tennessee</strong></p>
