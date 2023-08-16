@@ -18,7 +18,7 @@ https://joseph-s-foster.github.io/Birdwatching-Tennessee/
 
 ## Screenshot
 
-
+![Screenshot of Webpage](./assets/Screenshot.png)
 
 ## Resources
 
