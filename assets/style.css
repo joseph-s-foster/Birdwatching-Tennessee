@@ -126,11 +126,11 @@ img:hover {
     width: 800px;
     padding: 20px;
     color: rgb(20, 19, 19);
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     vertical-align: top;
     line-height: 1;
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 textarea {
@@ -141,11 +141,29 @@ textarea {
     background-color: green;
     color: white;
     height: 20px;
-    line-height: 10px;
     width: 100px;
+    line-height: 20px;
     margin-top: 140px;
-    margin-right: 30px;
+    margin-left: 1100px;
+    position: absolute;
     text-align: center;
     cursor: pointer;
+    padding: none;
+}
 
+@media (max-width: 768px) {
+    .saveBtn {
+        display: block;
+        width: 100px;
+        margin: auto;
+        margin-top: 20px;
+        position: static;
+    }
+
+    #textbox {
+        display: block;
+        width: 100%;
+        margin: auto;
+        margin-top: 20px;
+    }
 }

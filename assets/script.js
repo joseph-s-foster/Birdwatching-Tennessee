@@ -210,6 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const savedInput = localStorage.getItem('userInput');
   savedInput && (textareaField.value = savedInput);
+  console.log("Saved users input");
   
   saveButtons.forEach(saveButton => {
     saveButton.addEventListener('click', () => {
