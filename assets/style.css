@@ -167,15 +167,21 @@ textarea {
 .saveBtn {
     background-color: green;
     color: white;
-    height: 20px;
+    height: 30px;
     width: 100px;
-    line-height: 20px;
-    margin-top: 140px;
-    margin-left: 1100px;
+    line-height: 20px; 
+    margin-top: 160px;
+    margin-left: 1115px;
     position: absolute;
     text-align: center;
     cursor: pointer;
-    padding: none;
+}
+
+.messageContainer {
+    position: absolute;
+    color: red;
+    left: 1100px;
+    top: 200px;
 }
 
 @media (max-width: 768px) {

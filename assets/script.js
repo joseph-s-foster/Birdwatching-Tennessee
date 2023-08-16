@@ -188,24 +188,32 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const saveButtons = document.querySelectorAll('.saveBtn');
-  const birdSighting = document.querySelector('#bird-sighting');
-  const textareaField = document.querySelector('textarea[name="textbox"]'); // Select the textarea element
-  
+  const textareaField = document.querySelector('textarea[name="textbox"]'); 
+
+  // Retrieve a value from local storage after the user has made an input.
   const savedInput = localStorage.getItem('userInput');
   savedInput && (textareaField.value = savedInput);
   console.log("Saved users input");
-  
+
+//Once the user clicks on the save button show a message for 2000 secounds and save the input, even atfter refreshing the page.
   saveButtons.forEach(saveButton => {
-    saveButton.addEventListener('click', () => {
-      const userInput = textareaField.value;
-      if (userInput) {
-        localStorage.setItem('userInput', userInput);
-        birdSighting.innerHTML = "Sighting Saved";
-        setTimeout(() => birdSighting.innerHTML = "", 2000);
-      }
-    });
+      saveButton.addEventListener('click', () => {
+          const userInput = textareaField.value;
+
+          if (userInput) {
+              localStorage.setItem('userInput', userInput);
+              const messageContainer = document.createElement('div');
+              messageContainer.className = 'messageContainer';
+              messageContainer.textContent = "Sighting Saved";
+              saveButton.parentNode.insertBefore(messageContainer, saveButton.nextSibling);
+              setTimeout(() => {
+                  messageContainer.remove();
+              }, 2000);
+          }
+      });
   });
 });
+
 
 
 
