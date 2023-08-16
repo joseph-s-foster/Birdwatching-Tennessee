@@ -34,7 +34,6 @@ const getLocationAndFetchWeather = async () => {
         .then(currentWeatherData => {
           if (currentWeatherData) {
             const { weather, main, name } = currentWeatherData;
-            const desc = weather[0]?.description || "";
             const tempImg = document.createElement("img");
             tempImg.src = `https://openweathermap.org/img/w/${weather[0].icon}.png`;
             const wholeTemp = main.temp.toFixed(0);
@@ -59,8 +58,6 @@ const getLocationAndFetchWeather = async () => {
 };
 
 getLocationAndFetchWeather();
-
-document.addEventListener("DOMContentLoaded", getLocationAndFetchWeather);
 
 const dropdowns = document.querySelectorAll('.dropdown');
 // Adding a dropdown menu to easily access desired bird
