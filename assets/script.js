@@ -1,5 +1,6 @@
 const apikey = "7761e5644bf2af39970d6760ed459312";
 
+// Fetching weather data
 const fetchWeatherData = async url => {
   try {
     const response = await fetch(url);
@@ -11,6 +12,7 @@ const fetchWeatherData = async url => {
   }
 };
 
+// Displaying Weather message
 const displayMessage = (tempImg, message) => {
   const messageElement = Object.assign(document.createElement("p"), {
     textContent: message,
@@ -21,6 +23,7 @@ const displayMessage = (tempImg, message) => {
   document.querySelector(".weather").append(tempImg, messageElement);
 };
 
+// Retrieving location and weather data via openweathermap API
 const getLocationAndFetchWeather = async () => {
   try {
     const success = position => {
@@ -60,7 +63,7 @@ getLocationAndFetchWeather();
 document.addEventListener("DOMContentLoaded", getLocationAndFetchWeather);
 
 const dropdowns = document.querySelectorAll('.dropdown');
-
+// Adding a dropdown menu to easily access desired bird
 dropdowns.forEach(dropdown => {
   dropdown.addEventListener('mouseenter', () => {
     dropdown.querySelector('.dropdown-menu').style.display = 'block';
@@ -71,19 +74,13 @@ dropdowns.forEach(dropdown => {
   });
 });
 
-
-
-
-
-// Joe < 78 < Shaun
-
 document.addEventListener("DOMContentLoaded", async () => {
   const apiKey = 'q9iu7en5gq8d';
   const apiUrl = 'https://api.ebird.org/v2/data/obs/US-TN/recent';
   const cardContainer = document.getElementById('card-container');
 
   console.log("Page loaded");
-
+// fetching hotspot data from eBird API
   const fetchBirdHotspotData = async () => {
     try {
       const oneWeekAgo = new Date();
@@ -113,10 +110,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     const card = document.createElement('div');
     card.className = 'observation-card';
   
-    // Extract the required information from the data
+    // Extracts the required information from the data: common name, scientific name, Location and observation date
     const { comName, sciName, locName, obsDt } = data;
   
-    // Create a formatted card content
+    // Creates a formatted card content
     const cardContent = `
       <p><strong>Common Name:</strong> ${comName}</p>
       <p><strong>Scientific Name:</strong> ${sciName}</p>
@@ -136,9 +133,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.log("Bird hotspot data loaded:", birdHotspotData);
   
       // Loop through the last 5 observations
-      const last10Observations = birdHotspotData.slice(-5);
+      const last5Observations = birdHotspotData.slice(-5);
   
-      last10Observations.forEach(observation => {
+      last5Observations.forEach(observation => {
         createObservationCard(observation);
       });
     }
@@ -148,44 +145,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   loadBirdHotspotData();
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Adds text box for user input and save button for input.
 document.addEventListener('DOMContentLoaded', () => {
   const saveButtons = document.querySelectorAll('.saveBtn');
   const birdSighting = document.querySelector('#bird-sighting');

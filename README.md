@@ -22,4 +22,15 @@ https://joseph-s-foster.github.io/Birdwatching-Tennessee/
 
 ## Resources
 
+https://api.openweathermap.org
+
 https://www.allaboutbirds.org/news/
+
+https://api.ebird.org
+
+https://bulma.io/
+
+https://unicode.org/
+
+https://www.flickr.com/
+
