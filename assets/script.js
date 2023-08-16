@@ -60,8 +60,6 @@ const getLocationAndFetchWeather = async () => {
 
 getLocationAndFetchWeather();
 
-document.addEventListener("DOMContentLoaded", getLocationAndFetchWeather);
-
 const dropdowns = document.querySelectorAll('.dropdown');
 // Adding a dropdown menu to easily access desired bird
 dropdowns.forEach(dropdown => {
