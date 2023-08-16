@@ -2,374 +2,339 @@
 <html lang="en-us">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/reset.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/style.css" />
-    <title>Birdwatching Tennessee</title>
-    <p id="bird-sighting"></p>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/reset.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/style.css" />
+  <title>Birdwatching Tennessee</title>
+  <p id="bird-sighting"></p>
 </head>
 
 <body id="top">
 
-    <header>
-        <nav>
-            <ul class="main-menu">
-                <li>
-                    <h1>&#129718; Birdwatching Tennessee</h1>
-                </li>
-                <li class="weather">
-                    <!-- weather data goes here -->
-                </li>
-                <li>
-                    <a href="#birding-hotspots">Birding Hotspots &#129517; </a>
-                </li>
-                <li class="dropdown">
-                    <a>&#129417; Birds</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="navbar-item" href="#bluebird">
-                                Eastern Bluebird
-                            </a></li>
-                        <li><a class="navbar-item" href="#nwarbler">
-                                Nashville Warbler
-                            </a></li>
-                        <li><a class="navbar-item" href="#dejunco">
-                                Dark Eyed Junco
-                            </a></li>
-                        <li><a class="navbar-item" href="#rthawk">
-                                Red Tailed Hawk
-                            </a></li>
-                        <li><a class="navbar-item" href="#dwoodpecker">
-                                Downy Woodpecker
-                            </a></li>
-                        <li><a class="navbar-item" href="#esowl">
-                                Eastern Screech Owl
-                            </a></li>
-                        <li><a class="navbar-item" href="#ncardinal">
-                                Northern Cardinal
-                            </a></li>
-                        <li><a class="navbar-item" href="#hfinch">
-                                House Finch
-                            </a></li>
-                        <li><a class="navbar-item" href="#rbwoodpecker">
-                                Red Bellied Woodpecker
-                            </a></li>
-                        <li><a class="navbar-item" href="#bjay">
-                                Blue Jay
-                            </a></li>
-                        <li><a class="navbar-item" href="#ecdove">
-                                Eurasian Collared Dove
-                            </a></li>
-                        <li><a class="navbar-item" href="#arobin">
-                                American Robin
-                            </a></li>
-                        <li><a class="navbar-item" href="#etowhee">
-                                Eastern Towhee
-                            </a></li>
-                        <li><a class="navbar-item" href="#mdove">
-                                Mourning dove
-                            </a></li>
-                        <li><a class="navbar-item" href="#cwren">
-                                Carolina Wren
-                            </a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <ul class="main-menu">
+        <li>
+          <h1>&#129718; Birdwatching Tennessee</h1>
+        </li>
+        <li class="weather">
+          <!-- weather data goes here -->
+        </li>
+        <li>
+          <a href="#birding-hotspots">Birding Hotspots &#129517; </a>
+        </li>
+        <li class="dropdown">
+          <a>&#129417; Birds</a>
+          <ul class="dropdown-menu">
+            <li><a class="navbar-item" href="#bluebird">
+                Eastern Bluebird
+              </a></li>
+            <li><a class="navbar-item" href="#nwarbler">
+                Nashville Warbler
+              </a></li>
+            <li><a class="navbar-item" href="#dejunco">
+                Dark Eyed Junco
+              </a></li>
+            <li><a class="navbar-item" href="#rthawk">
+                Red Tailed Hawk
+              </a></li>
+            <li><a class="navbar-item" href="#dwoodpecker">
+                Downy Woodpecker
+              </a></li>
+            <li><a class="navbar-item" href="#esowl">
+                Eastern Screech Owl
+              </a></li>
+            <li><a class="navbar-item" href="#ncardinal">
+                Northern Cardinal
+              </a></li>
+            <li><a class="navbar-item" href="#hfinch">
+                House Finch
+              </a></li>
+            <li><a class="navbar-item" href="#rbwoodpecker">
+                Red Bellied Woodpecker
+              </a></li>
+            <li><a class="navbar-item" href="#bjay">
+                Blue Jay
+              </a></li>
+            <li><a class="navbar-item" href="#ecdove">
+                Eurasian Collared Dove
+              </a></li>
+            <li><a class="navbar-item" href="#arobin">
+                American Robin
+              </a></li>
+            <li><a class="navbar-item" href="#etowhee">
+                Eastern Towhee
+              </a></li>
+            <li><a class="navbar-item" href="#mdove">
+                Mourning dove
+              </a></li>
+            <li><a class="navbar-item" href="#cwren">
+                Carolina Wren
+              </a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="bluebird">
-        <div class="container">
-          <div class="columns">
-            <div class="column is-one-third">
-              <a href="https://www.allaboutbirds.org/guide/Eastern_Bluebird">
-                <div class="container">
-                  <img src="./assets/Eastern Bluebird.png" alt="a picture of a bluebird"
-                    title="Eastern Bluebird">
-                </div>
-              </a>
-              <h4>Eastern Bluebird</h4>
-              <input type="text" name="textbox" id="textbox">
-              <div class="styleButton">
-                <button class="saveBtn">Save Input</button>
-              </div>
+  <section id="bluebird">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third">
+          <a href="https://www.allaboutbirds.org/guide/Eastern_Bluebird">
+            <div class="container">
+              <img src="./assets/Eastern Bluebird.png" alt="a picture of a bluebird" title="Eastern Bluebird">
             </div>
+          </a>
+          <h4>Eastern Bluebird</h4>
           </div>
+          <textarea name="textbox" id="textbox" rows="6" style="height: 100%;"></textarea>
+          <button class="saveBtn">Save Input</button>
+         </div> 
+    </div>
+  </section>
+
+  <section id="nwarbler">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third">
+          <a href="https://www.allaboutbirds.org/guide/Nashville_Warbler">
+            <img src="./assets/Nashville warbler.png" alt="a picture of a warbler" title="Nashville Warbler">
+          </a>
+          <h4>Nashville Warbler</h4>
         </div>
-      </section>
+        <textarea name="textbox" id="textbox" rows="6" style="height: 100%;"></textarea>
+        <button class="saveBtn">Save Input</button>
+       </div> 
+  </div>
+</section>
 
-        <section id="nwarbler">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-one-third">
-                        <a href="https://www.allaboutbirds.org/guide/Nashville_Warbler">
-                            <img src="./assets/Nashville warbler.png" alt="a picture of a warbler"
-                                title="Nashville Warbler">
-                        </a>
-                        <h4>Nashville Warbler</h4>
-                      <input type="text" name="textbox" id="textbox">
-              <div class="styleButton">
-                <button class="saveBtn">Save Input</button>
-                <div id="bird-sighting"></div>
-              </div>
-            </div>
-          </div>
+  <section id="dejunco">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third">
+          <a href="https://www.allaboutbirds.org/guide/Dark-eyed_Junco">
+            <img src="./assets/Dark-eyed junco.png" alt="a picture of a junco" title="Dark Eyed Junco">
+          </a>
+          <h4>Dark Eyed Junco</h4>
         </div>
-        </section>
+        <textarea name="textbox" id="textbox" rows="6" style="height: 100%;"></textarea>
+        <button class="saveBtn">Save Input</button>
+       </div> 
+  </div>
+</section>
 
-        <section id="dejunco">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-one-third">
-                        <a href="https://www.allaboutbirds.org/guide/Dark-eyed_Junco">
-                            <img src="./assets/Dark-eyed junco.png" alt="a picture of a junco" title="Dark Eyed Junco">                       
-                        </a> 
-                         <h4>Dark Eyed Junco</h4>
-                         <input type="text" name="textbox" id="textbox">
-                         <div class="styleButton">
-                           <button class="saveBtn">Save Input</button>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
+  </section>
 
-        </section>
-
-        <section id="rthawk">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-one-third">
-                        <a href="https://www.allaboutbirds.org/guide/Red-tailed_Hawk">
-                            <img src="./assets/Red tail hawk.png" alt="a picture of a hawk" title="Red Tailed Hawk">
-                        </a>
-                        <input type="text" name="textbox" id="textbox">
-                        <div class="styleButton">
-                          <button class="saveBtn">Save Input</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        </section>
-
-        <section id="dwoodpecker">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-one-third">
-                        <a href="https://www.allaboutbirds.org/guide/Downy_Woodpecker">
-                            <img src="./assets/Downy Woodpecker.png" alt="a picture of a woodpecker"
-                                title="Downy Woodpecker">
-                        </a>
-                        <h4>Downy Woodpecker</h4>
-                        <input type="text" name="textbox" id="textbox">
-                        <div class="styleButton">
-                          <button class="saveBtn">Save Input</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        </section>
-
-        <section id="esowl">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-one-third">
-                        <a href="https://www.allaboutbirds.org/guide/Eastern_Screech-Owl">
-                            <img src="./assets/Eastern screech owl.png" alt="a picture of an owl"
-                                title="Eastern Screech Owl">
-                        </a>
-                        <h4>Eastern Screech Owl</h4>
-                        <input type="text" name="textbox" id="textbox">
-                        <div class="styleButton">
-                          <button class="saveBtn">Save Input</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        </section>
-
-        <section id="ncardinal">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-one-third">
-                        <a href="https://www.allaboutbirds.org/guide/Northern_Cardinal">
-                            <img src="./assets/Northern Cardinal.png" alt="a picture of a cardinal"
-                                title="Northern Cardinal">
-                        </a>
-                        <h4>Northern Cardinal</h4>
-                        <input type="text" name="textbox" id="textbox">
-                        <div class="styleButton">
-                          <button class="saveBtn">Save Input</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        </section>
-
-        <section id="hfinch">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-one-third">
-                        <a href="https://www.allaboutbirds.org/guide/House_Finch">
-                            <img src="./assets/House Finch.png" alt="a picture of a Finch" title="House Finch">
-                        </a>
-                        <h4>House Finch</h4>
-                        <input type="text" name="textbox" id="textbox">
-                        <div class="styleButton">
-                          <button class="saveBtn">Save Input</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        </section>
-
-        <section id="rbwoodpecker">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-one-third">
-                        <a href="https://www.allaboutbirds.org/guide/Red-bellied_Woodpecker">
-                            <img src="./assets/Red-Bellied woodpecker.png" alt="a picture of a woodpecker"
-                                title="Red Bellied Woodpecker">
-                        </a>
-                        <h4>Red Bellied Woodpecker</h4>
-                        <input type="text" name="textbox" id="textbox">
-                        <div class="styleButton">
-                          <button class="saveBtn">Save Input</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        </section>
-
-        <section id="bjay">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-one-third">
-                        <a href="https://www.allaboutbirds.org/guide/Blue_Jay">
-                            <img src="./assets/Blue Jay.png" alt="a picture of a blue jay" title="Blue Jay">
-                        </a>
-                        <h4>Blue Jay</h4>
-                        <input type="text" name="textbox" id="textbox">
-                        <div class="styleButton">
-                          <button class="saveBtn">Save Input</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        </section>
-
-        <section id="ecdove">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-one-third">
-                        <a href="https://www.allaboutbirds.org/guide/Eurasian_Collared-Dove">
-                            <img src="./assets/Eurasian Collared Dove.png" alt="a picture of a dove"
-                                title="Eurasian Collared Dove">
-                        </a>
-                        <h4>Eurasian Collared Dove</h4>
-                        <input type="text" name="textbox" id="textbox">
-                        <div class="styleButton">
-                          <button class="saveBtn">Save Input</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        </section>
-
-        <section id="arobin">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-one-third">
-                        <a href="https://www.allaboutbirds.org/guide/American_Robin">
-                            <img src="./assets/American Robin.png" alt="a picture of a robin" title="American Robin">
-                        </a>
-                        <h4>American Robin</h4>
-                        <input type="text" name="textbox" id="textbox">
-                        <div class="styleButton">
-                          <button class="saveBtn">Save Input</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        </section>
-
-        <section id="etowhee">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-one-third">
-                        <a href="https://www.allaboutbirds.org/guide/Eastern_Towhee">
-                            <img src="./assets/Eastern Towhee.png" alt="a picture of a towhee" title="Eastern Towhee">
-                        </a>
-                        <h4>Eastern Towhee</h4>
-                        <input type="text" name="textbox" id="textbox">
-                        <div class="styleButton">
-                          <button class="saveBtn">Save Input</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        </section>
-
-        <section id="mdove">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-one-third">
-                        <a href="https://www.allaboutbirds.org/guide/Mourning_Dove">
-                            <img src="./assets/Mourning Dove.png" alt="a picture of a dove" title="Mourning Dove">
-                        </a>
-                        <h4>Mourning Dove</h4>
-                        <input type="text" name="textbox" id="textbox">
-                        <div class="styleButton">
-                          <button class="saveBtn">Save Input</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        </section>
-
-        <section id="cwren">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-one-third">
-                        <a href="https://www.allaboutbirds.org/guide/Carolina_Wren">
-                            <img src="./assets/Carolina Wren.png" alt="a picture of a wren" title="Carolina Wren">
-                        </a>
-                        <h4>Carolina Wren</h4>
-                        <input type="text" name="textbox" id="textbox">
-                        <div class="styleButton">
-                          <button class="saveBtn">Save Input</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        </section>
-        <div id="birding-hotspots">
-            <p class="hotspot content-is-large"><strong>Birding Hotspots in Tennessee</strong></p>
-            <!-- Content of the section goes here -->
+  <section id="rthawk">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third">
+          <a href="https://www.allaboutbirds.org/guide/Red-tailed_Hawk">
+            <img src="./assets/Red tail hawk.png" alt="a picture of a hawk" title="Red Tailed Hawk">
+          </a>
+          <h4>Red Tailed Hawk</h4>
         </div>
-        <div id="card-container" class="observation-card block">
-            <!-- this will display hotstpots for birds -->
+        <textarea name="textbox" id="textbox" rows="6" style="height: 100%;"></textarea>
+        <button class="saveBtn">Save Input</button>
+       </div> 
+  </div>
+</section>
+
+  <section id="dwoodpecker">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third">
+          <a href="https://www.allaboutbirds.org/guide/Downy_Woodpecker">
+            <img src="./assets/Downy Woodpecker.png" alt="a picture of a woodpecker" title="Downy Woodpecker">
+          </a>
+          <h4>Downy Woodpecker</h4>
         </div>
+        <textarea name="textbox" id="textbox" rows="6" style="height: 100%;"></textarea>
+        <button class="saveBtn">Save Input</button>
+       </div> 
+  </div>
+</section>
 
-    </main>
+  <section id="esowl">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third">
+          <a href="https://www.allaboutbirds.org/guide/Eastern_Screech-Owl">
+            <img src="./assets/Eastern screech owl.png" alt="a picture of an owl" title="Eastern Screech Owl">
+          </a>
+          <h4>Eastern Screech Owl</h4>
+        </div>
+        <textarea name="textbox" id="textbox" rows="6" style="height: 100%;"></textarea>
+        <button class="saveBtn">Save Input</button>
+       </div> 
+  </div>
+</section>
 
-    <footer>
-        <nav class="centered-nav">
-            <ul class="centered-list">
-                <li>
-                    <a href="https://www.allaboutbirds.org/news/" class="top">Resources</a>
-                </li>
-                <li>
-                    <a href="https://github.com/joseph-s-foster/Birdwatching-Tennessee" class="top">GitHub</a>
-                </li>
-                <li>
-                    <a href="#top" class="top">Back to Top</a>
-                </li>
-            </ul>
-        </nav>
+  <section id="ncardinal">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third">
+          <a href="https://www.allaboutbirds.org/guide/Northern_Cardinal">
+            <img src="./assets/Northern Cardinal.png" alt="a picture of a cardinal" title="Northern Cardinal">
+          </a>
+          <h4>Northern Cardinal</h4>
+        </div>
+        <textarea name="textbox" id="textbox" rows="6" style="height: 100%;"></textarea>
+        <button class="saveBtn">Save Input</button>
+       </div> 
+  </div>
+</section>
 
-    </footer>
+  <section id="hfinch">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third">
+          <a href="https://www.allaboutbirds.org/guide/House_Finch">
+            <img src="./assets/House Finch.png" alt="a picture of a Finch" title="House Finch">
+          </a>
+          <h4>House Finch</h4>
+        </div>
+        <textarea name="textbox" id="textbox" rows="6" style="height: 100%;"></textarea>
+        <button class="saveBtn">Save Input</button>
+       </div> 
+  </div>
+</section>
 
-    <script src="./assets/script.js"></script>
+  <section id="rbwoodpecker">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third">
+          <a href="https://www.allaboutbirds.org/guide/Red-bellied_Woodpecker">
+            <img src="./assets/Red-Bellied woodpecker.png" alt="a picture of a woodpecker"
+              title="Red Bellied Woodpecker">
+          </a>
+          <h4>Red Bellied Woodpecker</h4>
+        </div>
+        <textarea name="textbox" id="textbox" rows="6" style="height: 100%;"></textarea>
+        <button class="saveBtn">Save Input</button>
+       </div> 
+  </div>
+</section>
+
+  <section id="bjay">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third">
+          <a href="https://www.allaboutbirds.org/guide/Blue_Jay">
+            <img src="./assets/Blue Jay.png" alt="a picture of a blue jay" title="Blue Jay">
+          </a>
+          <h4>Blue Jay</h4>
+        </div>
+        <textarea name="textbox" id="textbox" rows="6" style="height: 100%;"></textarea>
+        <button class="saveBtn">Save Input</button>
+       </div> 
+  </div>
+</section>
+
+  <section id="ecdove">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third">
+          <a href="https://www.allaboutbirds.org/guide/Eurasian_Collared-Dove">
+            <img src="./assets/Eurasian Collared Dove.png" alt="a picture of a dove" title="Eurasian Collared Dove">
+          </a>
+          <h4>Eurasian Collared Dove</h4>
+        </div>
+        <textarea name="textbox" id="textbox" rows="6" style="height: 100%;"></textarea>
+        <button class="saveBtn">Save Input</button>
+       </div> 
+  </div>
+</section>
+
+  <section id="arobin">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third">
+          <a href="https://www.allaboutbirds.org/guide/American_Robin">
+            <img src="./assets/American Robin.png" alt="a picture of a robin" title="American Robin">
+          </a>
+          <h4>American Robin</h4>
+        </div>
+        <textarea name="textbox" id="textbox" rows="6" style="height: 100%;"></textarea>
+        <button class="saveBtn">Save Input</button>
+       </div> 
+  </div>
+</section>
+
+  <section id="etowhee">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third">
+          <a href="https://www.allaboutbirds.org/guide/Eastern_Towhee">
+            <img src="./assets/Eastern Towhee.png" alt="a picture of a towhee" title="Eastern Towhee">
+          </a>
+          <h4>Eastern Towhee</h4>
+        </div>
+        <textarea name="textbox" id="textbox" rows="6" style="height: 100%;"></textarea>
+        <button class="saveBtn">Save Input</button>
+       </div> 
+  </div>
+</section>
+
+  <section id="mdove">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third">
+          <a href="https://www.allaboutbirds.org/guide/Mourning_Dove">
+            <img src="./assets/Mourning Dove.png" alt="a picture of a dove" title="Mourning Dove">
+          </a>
+          <h4>Mourning Dove</h4>
+        </div>
+        <textarea name="textbox" id="textbox" rows="6" style="height: 100%;"></textarea>
+        <button class="saveBtn">Save Input</button>
+       </div> 
+  </div>
+</section>
+
+  <section id="cwren">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-third">
+          <a href="https://www.allaboutbirds.org/guide/Carolina_Wren">
+            <img src="./assets/Carolina Wren.png" alt="a picture of a wren" title="Carolina Wren">
+          </a>
+          <h4>Carolina Wren</h4>
+        </div>
+        <textarea name="textbox" id="textbox" rows="6" style="height: 100%;"></textarea>
+        <button class="saveBtn">Save Input</button>
+       </div> 
+  </div>
+</section>
+  <div id="birding-hotspots">
+    <p class="hotspot content-is-large"><strong>Birding Hotspots in Tennessee</strong></p>
+    <!-- Content of the section goes here -->
+  </div>
+  <div id="card-container" class="observation-card block">
+    <!-- this will display hotstpots for birds -->
+  </div>
+
+  </main>
+
+  <footer>
+    <nav class="centered-nav">
+      <ul class="centered-list">
+        <li>
+          <a href="https://www.allaboutbirds.org/news/" class="top">Resources</a>
+        </li>
+        <li>
+          <a href="https://github.com/joseph-s-foster/Birdwatching-Tennessee" class="top">GitHub</a>
+        </li>
+        <li>
+          <a href="#top" class="top">Back to Top</a>
+        </li>
+      </ul>
+    </nav>
+
+  </footer>
+
+  <script src="./assets/script.js"></script>
 
 </body>
