@@ -189,14 +189,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 document.addEventListener('DOMContentLoaded', () => {
   const saveButtons = document.querySelectorAll('.saveBtn');
   const birdSighting = document.querySelector('#bird-sighting');
-  const inputField = document.querySelector('input[type="text"]');
+  const textareaField = document.querySelector('textarea[name="textbox"]'); // Select the textarea element
   
   const savedInput = localStorage.getItem('userInput');
-  savedInput && (inputField.value = savedInput);
+  savedInput && (textareaField.value = savedInput);
+  console.log("Saved users input");
   
   saveButtons.forEach(saveButton => {
     saveButton.addEventListener('click', () => {
-      const userInput = inputField.value;
+      const userInput = textareaField.value;
       if (userInput) {
         localStorage.setItem('userInput', userInput);
         birdSighting.innerHTML = "Sighting Saved";
@@ -205,6 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
 
 
 
