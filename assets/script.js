@@ -11,22 +11,14 @@ const fetchWeatherData = async url => {
   }
 };
 
-const weatherIcons = {
-  clear: "\u2600",
-  cloud: "\u2601",
-  rain: "\u2614",
-  storm: "\u1F329",
-  default: "\u1F321"
-};
-
-const displayMessage = message => {
+const displayMessage = (tempImg, message) => {
   const messageElement = Object.assign(document.createElement("p"), {
     textContent: message,
-    classList: ["message", "is-info"],
+    classList: ["message"],
     style: "background-color: #333; color: white;"
   });
-  document.querySelector(".weather").textContent = ""; // Clear previous messages
-  document.querySelector(".weather").appendChild(messageElement);
+  document.querySelector(".weather").textContent = "";
+  document.querySelector(".weather").append(tempImg, messageElement);
 };
 
 const getLocationAndFetchWeather = async () => {
@@ -40,12 +32,11 @@ const getLocationAndFetchWeather = async () => {
           if (currentWeatherData) {
             const { weather, main, name } = currentWeatherData;
             const desc = weather[0]?.description || "";
-            const icon = weatherIcons[Object.keys(weatherIcons).find(key =>
-              desc.includes(key)
-            )] || weatherIcons.default;
+            const tempImg = document.createElement("img");
+            tempImg.src = `https://openweathermap.org/img/w/${weather[0].icon}.png`;
             const wholeTemp = main.temp.toFixed(0);
-            const message = `${icon} ${wholeTemp}°F - ${name}`;
-            displayMessage(message);
+            const message = `${wholeTemp}°F - ${name}`;
+            displayMessage(tempImg, message);
           }
           console.log("Current Weather Data:", currentWeatherData);
         })
@@ -66,18 +57,6 @@ const getLocationAndFetchWeather = async () => {
 
 getLocationAndFetchWeather();
 
-
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", getLocationAndFetchWeather);
 
 const dropdowns = document.querySelectorAll('.dropdown');
@@ -91,6 +70,10 @@ dropdowns.forEach(dropdown => {
     dropdown.querySelector('.dropdown-menu').style.display = 'none';
   });
 });
+
+
+
+
 
 // Joe < 78 < Shaun
 
